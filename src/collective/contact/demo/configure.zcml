@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="collective.contact.demo">
+
+    <includeDependencies package="." />
+
+    <i18n:registerTranslations directory="locales" />
+
+    <include package=".browser" />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="collective.contact.demo"
+        directory="profiles/default"
+        description="Installs the collective.contact.demo add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:importStep
+        name="collective.contact.demo-postInstall"
+        title="collective.contact.demo post_install import step"
+        description="Post install import step from collective.contact.demo"
+        handler=".setuphandlers.post_install">
+    </genericsetup:importStep>
+
+</configure>
