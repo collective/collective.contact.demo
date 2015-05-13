@@ -147,6 +147,11 @@ def setup_contacts_demo(portal):
     pear.invokeFactory('position', 'cto', **params)
     pear_cto = pear['cto']
 
+    params = {'title': u"CMO",
+              'position_type': u'cmo',
+             }
+    pear.invokeFactory('position', 'cmo', **params)
+
     params = {'title': u"President",
               'position_type': u'president',
              }
